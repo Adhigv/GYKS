@@ -1,0 +1,118 @@
+.mentor-page{
+  display:flex;
+  min-height:100vh;
+  background:#f1f5f9;
+}
+
+.sidebar{
+
+  width:250px;
+
+  background:#0f172a;
+
+  color:white;
+
+  padding:30px;
+}
+
+.sidebar h2{
+  margin-bottom:40px;
+}
+
+.sidebar ul{
+  list-style:none;
+  padding:0;
+}
+
+.sidebar li{
+
+  margin:20px 0;
+  cursor:pointer;
+}
+
+.content{
+
+  flex:1;
+  padding:40px;
+}
+
+.welcome-card{
+
+  background:
+  linear-gradient(
+  135deg,
+  #2563eb,
+  #1d4ed8
+  );
+
+  color:white;
+
+  padding:40px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 15px 30px rgba(0,0,0,.2);
+}
+
+.stats-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:25px;
+
+  margin-top:30px;
+}
+
+.stat-card{
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:
+  0 5px 15px rgba(0,0,0,.08);
+
+  transition:.3s;
+}
+
+.stat-card:hover{
+
+  transform:
+  translateY(-5px);
+}
+
+.stat-number{
+
+  font-size:36px;
+
+  font-weight:bold;
+
+  color:#2563eb;
+}
+
+.create-btn{
+
+  margin-top:30px;
+
+  display:inline-block;
+
+  padding:15px 30px;
+
+  background:#2563eb;
+
+  color:white;
+
+  border-radius:12px;
+
+  text-decoration:none;
+
+  font-weight:bold;
+}

@@ -1,0 +1,80 @@
+import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
+import api from "../services/api";
+import axios from "axios";
+
+function Skills() {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    loadSkills();
+  }, []);
+
+  const loadSkills = async () => {
+    const response = await api.get("/skills");
+
+    setSkills(response.data);
+  };
+
+  const enroll= async(skillId) => {
+    const user = 
+    Json.parse(
+      localStorage.getItem("user")
+    );
+
+    const enrollSkill =
+    async (skillId) => {
+      try {
+    
+          await axios.post("http://localhost:5000/api/enrollments",
+            {
+            studentId:user._id, 
+            skillId
+          }
+        );
+        Toast.success(
+          "Enrollment Submitted"
+        );
+      } catch (err) {
+        Toast.error(
+          err.response?.data?.message
+        );
+      }
+    };
+  return (
+    <>
+    <Navbar />
+    
+    <div style={{ padding: "30px" }}>
+      <h1>Available Skills</h1>
+
+      <div className="skills-grid">
+  {skills.map((skill) => (
+    <div key={skill._id} className="skill-card">
+
+      <div className="skill-badge">
+        {skill.category}
+      </div>
+
+      <h3>{skill.title}</h3>
+
+      <p>{skill.description}</p>
+
+      <p>
+        Mentor:
+        {skill.mentor?.name}
+      </p>
+
+      <button className="enroll-btn" onClick={() => enrollSkill(skill._id)}>
+        Enroll Now
+      </button>
+
+    </div>
+  ))}
+  </div>
+  </div>
+    </>
+  );
+}
+}
+export default Skills;

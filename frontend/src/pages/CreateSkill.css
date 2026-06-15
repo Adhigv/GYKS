@@ -1,0 +1,104 @@
+.create-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:
+  linear-gradient(
+  135deg,
+  #0f172a,
+  #1e3a8a
+  );
+
+  padding:30px;
+}
+
+.create-card{
+
+  width:100%;
+  max-width:650px;
+
+  background:white;
+
+  padding:40px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.create-card h1{
+  margin-bottom:10px;
+  color:#1e3a8a;
+}
+
+.create-card p{
+  color:gray;
+  margin-bottom:25px;
+}
+
+.create-card input,
+.create-card textarea{
+
+  width:100%;
+
+  padding:15px;
+
+  margin-bottom:20px;
+
+  border:2px solid #e5e7eb;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  transition:.3s;
+}
+
+.create-card input:focus,
+.create-card textarea:focus{
+
+  border-color:#2563eb;
+
+  outline:none;
+
+  box-shadow:
+  0 0 10px rgba(37,99,235,.3);
+}
+
+.create-card button{
+
+  width:100%;
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#2563eb;
+
+  color:white;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.create-card button:hover{
+
+  transform:translateY(-2px);
+
+  background:#1d4ed8;
+}
+
+.create-card button:disabled{
+
+  background:gray;
+  cursor:not-allowed;
+}
