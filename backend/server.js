@@ -16,8 +16,9 @@ const app = express();
 app.use(
   cors({
     origin:[
+      ""
       "https://gyks.vercel.app",
-      "https://gyks-jyhc8r5b5-adarsha-g-v-s-projects.vercel.app",
+      "https://gyks-q0yiswzw4-adarsha-g-v-s-projects.vercel.app",
       "https://gyks.in",
       "https://www.gyks.in"
     ],
