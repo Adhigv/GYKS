@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
-import api from "../services/api";
+import API from "../services/api";
 import axios from "axios";
 
 function Skills() {
@@ -26,7 +26,7 @@ function Skills() {
     async (skillId) => {
       try {
     
-          await axios.post("http://localhost:5000/api/enrollments",
+          await axios.post(`${import.meta.env.VITE_API_URL}/auth/enrollments`,
             {
             studentId:user._id, 
             skillId

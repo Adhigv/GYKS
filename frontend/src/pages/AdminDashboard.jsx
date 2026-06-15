@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./AdminDashboard.css";
+import API from "../services/api";
 
 function AdminDashboard() {
 const [mentors, setMentors] = useState([]);
@@ -22,7 +23,7 @@ fetchDashboardStats();
 const fetchMentors = async () => {
 try {
 const res = await axios.get(
-`http://localhost:5000/api/users/pending-mentors`
+`${import.meta.env.VITE_API_URL}/api/users/pending-mentors`
 );
 
   setMentors(res.data);
@@ -36,7 +37,7 @@ const res = await axios.get(
 const fetchDashboardStats = async () => {
 try {
 const res = await axios.get(
-`http://localhost:5000/api/users/dashboard-stats`
+`${import.meta.env.VITE_API_URL}/api/users/dashboard-stats`
 );
 
   setStudentCount(res.data.students || 0);
@@ -51,7 +52,7 @@ const res = await axios.get(
 const approveMentor = async (id) => {
 try {
 await axios.put(
-`http://localhost:5000/api/users/approve/${id}`
+`${import.meta.env.VITE_API_URL}/api/users/approve/${id}`
 );
 
   toast.success("Mentor Approved");
@@ -66,7 +67,7 @@ await axios.put(
 const rejectMentor = async (id) => {
 try {
 await axios.put(
-`http://localhost:5000/api/users/reject/${id}`
+`${import.meta.env.VITE_API_URL}/api/users/reject/${id}`
 );
 
   toast.error("Mentor Rejected");

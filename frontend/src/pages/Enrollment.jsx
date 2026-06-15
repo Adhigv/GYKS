@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Enrollment.css";
-
+import API from "../services/api";
 function Enrollment() {
 
 const [enrollments,
@@ -20,7 +20,7 @@ async () => {
 
 const res =
 await axios.get(
-"http://localhost:5000/api/enrollments"
+`${import.meta.env.VITE_API_URL}/api/enrollments`
 );
 
 setEnrollments(
@@ -33,7 +33,7 @@ const approve =
 async (id) => {
 
 await axios.put(
-`http://localhost:5000/api/enrollments/approve/${id}`
+`${import.meta.env.VITE_API_URL}/api/enrollments/approve/${id}`
 );
 
 fetchEnrollments();

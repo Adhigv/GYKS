@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import{useNavigate} from "react-router-dom";
 import "./CreateSkill.css";
-
+import API from "../services/api";
 function CreateSkill() {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
@@ -21,7 +21,7 @@ function CreateSkill() {
       setLoading(true);
 
       await axios.post(
-        "http://localhost:5000/api/skills",
+        `${import.meta.env.VITE_API_URL}/api/skills`,
         {
           title,
           category,
