@@ -52,10 +52,10 @@ const res = await API.get(
 const approveMentor = async (id) => {
 try {
 await API.put(
-"/api/users/approve/${id}"
+`/api/users/approve/${id}`
 );
 
-  toast.success("Mentor Approved");
+  toast.success("GYKS: Mentor Approved");
   fetchMentors();
   fetchDashboardStats();
 } catch (error) {
@@ -67,7 +67,7 @@ await API.put(
 const rejectMentor = async (id) => {
 try {
 await API.put(
-"/api/users/reject/${id}"
+`/api/users/reject/${id}`
 );
 
   toast.error("Mentor Rejected");

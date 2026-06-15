@@ -40,7 +40,7 @@ function Login() {
         JSON.stringify(response.data.user)
       );
 
-      alert("Login Success");
+      alert("GYKS: Login successful. Welcome Back!");
       const role = response.data.user.role;
 
       if (role === "student") {

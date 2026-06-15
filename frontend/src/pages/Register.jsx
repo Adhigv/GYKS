@@ -35,7 +35,7 @@ function Register() {
       if (form.role==="mentor"){
         alert("Registration submitted. Waiting for Admin Approval.");
       }else{
-        alert("Registration Succesfull.");
+        alert("GYKS: Registration Succesfull.");
       }
 
     } catch(error){
