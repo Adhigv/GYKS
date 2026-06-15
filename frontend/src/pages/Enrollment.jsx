@@ -19,8 +19,8 @@ const fetchEnrollments =
 async () => {
 
 const res =
-await axios.get(
-`${import.meta.env.VITE_API_URL}/api/enrollments`
+await API.get(
+"/api/enrollments"
 );
 
 setEnrollments(
@@ -32,8 +32,8 @@ res.data
 const approve =
 async (id) => {
 
-await axios.put(
-`${import.meta.env.VITE_API_URL}/api/enrollments/approve/${id}`
+await API.put(
+"/api/enrollments/approve/${id}"
 );
 
 fetchEnrollments();

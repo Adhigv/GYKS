@@ -20,8 +20,8 @@ function CreateSkill() {
     try {
       setLoading(true);
 
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/skills`,
+      await API.post(
+        "/api/skills",
         {
           title,
           category,

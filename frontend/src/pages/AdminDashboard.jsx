@@ -22,8 +22,8 @@ fetchDashboardStats();
 
 const fetchMentors = async () => {
 try {
-const res = await axios.get(
-`${import.meta.env.VITE_API_URL}/api/users/pending-mentors`
+const res = await API.get(
+"/api/users/pending-mentors"
 );
 
   setMentors(res.data);
@@ -36,8 +36,8 @@ const res = await axios.get(
 
 const fetchDashboardStats = async () => {
 try {
-const res = await axios.get(
-`${import.meta.env.VITE_API_URL}/api/users/dashboard-stats`
+const res = await API.get(
+"/api/users/dashboard-stats"
 );
 
   setStudentCount(res.data.students || 0);
@@ -51,8 +51,8 @@ const res = await axios.get(
 
 const approveMentor = async (id) => {
 try {
-await axios.put(
-`${import.meta.env.VITE_API_URL}/api/users/approve/${id}`
+await API.put(
+"/api/users/approve/${id}"
 );
 
   toast.success("Mentor Approved");
@@ -66,8 +66,8 @@ await axios.put(
 
 const rejectMentor = async (id) => {
 try {
-await axios.put(
-`${import.meta.env.VITE_API_URL}/api/users/reject/${id}`
+await API.put(
+"/api/users/reject/${id}"
 );
 
   toast.error("Mentor Rejected");

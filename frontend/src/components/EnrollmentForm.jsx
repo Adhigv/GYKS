@@ -22,8 +22,8 @@ function EnrollmentForm() {
   const handleSubmit = async () => {
   try {
 
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/enrollments`,
+    const res = await API.post(
+      "/api/enrollments",
       {
         name: form.name,
         email: form.email,

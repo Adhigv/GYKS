@@ -10,7 +10,7 @@ function Register() {
       name: "",
       email: "",
       password: "",
-      role:"student "
+      role:"student"
     });
 
   const handleChange = (e) => {
@@ -27,12 +27,12 @@ function Register() {
 
     try {
 
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/register`,
+      await API.post(
+        "api/auth/register",
         form
       );
 
-      if (role==="mentor"){
+      if (form.role==="mentor"){
         alert("Registration submitted. Waiting for Admin Approval.");
       }else{
         alert("Registration Succesfull.");
