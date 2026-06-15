@@ -14,16 +14,17 @@ connectDB();
 const app = express();
 
 app.use(
-  cors(
-    // origin:[
+  cors({
+    origin:[
       
     //   "https://gyks.vercel.app",
     //   "https://gyks-q0yiswzw4-adarsha-g-v-s-projects.vercel.app",
-    //   "https://gyks.in",
-    //   "https://www.gyks.in"
-    // ],
-    // credentials:true,
-  )
+      "https://gyks.in",
+      "https://www.gyks.in",
+      "https://api.gyks.in"
+    ],
+    credentials:true,
+  })
 );
 
 app.use(express.json());
