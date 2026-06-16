@@ -17,16 +17,17 @@ function Skills() {
   };
 
   const enroll= async(skillId) => {
-    const user = 
-    Json.parse(
-      localStorage.getItem("user")
-    );
+    
 
     const enrollSkill =
     async (skillId) => {
+      const user = 
+      JSON.parse(
+      localStorage.getItem("user")
+    );
       try {
     
-          await axios.post(`${import.meta.env.VITE_API_URL}/auth/enrollments`,
+          await API.post("api/auth/enrollments",
             {
             studentId:user._id, 
             skillId
