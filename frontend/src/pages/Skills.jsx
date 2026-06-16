@@ -11,15 +11,12 @@ function Skills() {
   }, []);
 
   const loadSkills = async () => {
-    const response = await api.get("/skills");
+    const response = await API.get("/skills");
 
     setSkills(response.data);
   };
 
-  const enroll= async(skillId) => {
-    
-
-    const enrollSkill =
+  const enrollSkill =
     async (skillId) => {
       const user = 
       JSON.parse(
@@ -77,5 +74,5 @@ function Skills() {
     </>
   );
 }
-}
+
 export default Skills;
