@@ -46,19 +46,8 @@ app.get("/", (req, res) => {
 
 });
 
-app.listen(
-  process.env.PORT,
-  () => {
+const PORT =process.env.PORT || 5000;
+app.listen(PORT,"0.0.0.0",()=>{
+  console.log(`Server Running on Port $ {PORT}`);
 
-    console.log(
-      `Server Running on Port ${process.env.PORT}`
-    );
-
-  }
-);
-app.get("/api/test", (req, res) => {
-
-  res.json({
-    message: "backend is working"
-  });
 });
