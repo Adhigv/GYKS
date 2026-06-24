@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 
 function Hero() {
+  
   return (
     <section
       style={{
-        height: "80vh",
+        minHeight: "100vh",
+        width:"100%",
+        boxSizing:"border-box",
+        padding:"20px",
         background:
           "linear-gradient(to right,#2563eb,#1e40af)",
         color: "white",
@@ -13,6 +17,7 @@ function Hero() {
         justifyContent: "center",
         textAlign: "center",
         flexDirection: "column",
+        
       }}
     >
       <h1 style={{ fontSize: "60px" }}>
