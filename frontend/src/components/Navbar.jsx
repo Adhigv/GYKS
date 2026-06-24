@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/logo.png"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +19,27 @@ function Navbar() {
           alignItems: "center",
         }}
       >
-        <h2>GYKS</h2>
+        <Link 
+        to="/"
+        style={{
+          display:"flex",
+          alignItems:"center",
+          gap:"10px",
+          textDecoration:"none",
+          color:"white",
+        }}
+        >
+          <img
+          src={logo}
+          alt="GYKS Logo"
+          style={{
+            width:"40px",
+            height:"40px",
+            borderRadius:"50%",
+          }}
+          />
+          <h2 style={{margin:0}}>GYKS</h2>
+          </Link>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -71,15 +92,15 @@ function Navbar() {
           <Link to="/donate" style={linkStyle}>Donate</Link>
           <Link to="/login" style={linkStyle}>Login</Link>
 
-          {user?.role === "admin" && (
+          {user && user.role === "admin" && (
             <Link to="/admin" style={linkStyle}>Admin Dashboard</Link>
           )}
 
-          {user?.role === "mentor" && (
+          {user && user?.role === "mentor" && (
             <Link to="/mentor" style={linkStyle}>Mentor Dashboard</Link>
           )}
 
-          {user?.role === "student" && (
+          {user && user?.role === "student" && (
             <Link to="/student" style={linkStyle}>Student Dashboard</Link>
           )}
         </div>
